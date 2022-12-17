@@ -1,58 +1,45 @@
 console.log("it works");
 
-// Homework 1 resenie 1 
-let phonePrice = 119.95;
-let phoneTax = 0.05;
-let phoneTaxAndPhonePrice = phonePrice + phonePrice * phoneTax;
-let sum = phoneTaxAndPhonePrice * 30;
-console.log(sum);
+// Homework 1 
+function returnDiffType(parameter){
+    console.log(typeof parameter);
+}
 
-// Homework 1 resenie 2
-let allPhonePrices = 30 * 119.95;
-let allPhoneTax = 0.05 * allPhonePrices;
-let allSumPrice = allPhonePrices + allPhoneTax;
-console.log(allSumPrice);
+returnDiffType({name: "Joce"});
+returnDiffType(true);
+returnDiffType(69);
+returnDiffType("jabuka");
+returnDiffType();
 
 // Homework 2
-let year = parseInt(prompt("Enter your birthyear"));
-year = (year - 4) % 12;
 
-if (year < 1){
-    console.log("Try using valid year");
+function convertDogYears(years){
+    let dogYears = years * 7;
+    console.log( `Your dog is ${dogYears} years old in human years`);
 }
-else if (year === 0){
-    console.log("Your Chinese Zodiac is Rat");
+
+convertDogYears(7);
+
+function convertHumanYears(years){
+    let humanYears = parseInt(years / 7);
+    console.log( `You are ${humanYears} years old in dog years`);
 }
-else if (year === 1){
-    console.log("Your Chinese Zodiac is Ox");
+
+convertHumanYears(81);
+
+// Homework 3
+
+let balance = 20000;
+
+function withdrawMoney(){
+    const withdraw = prompt("How much would you like to withdraw?");
+    if (withdraw > balance){
+        console.log(`You dont have enough money in your bank account. You have $ ${balance} left in your bank account`);
+        return;
+    }
+    balance -= withdraw;
+    console.log(`You withdrew $ ${withdraw}. You have $ ${balance} left in your bank account`);
 }
-else if (year === 2){
-    console.log("Your Chinese Zodiac is Tiger");
-}
-else if (year === 3){
-    console.log("Your Chinese Zodiac is Rabbit");
-}
-else if (year === 4){
-    console.log("Your Chinese Zodiac is Dragon");  
-}
-else if (year === 5){
-    console.log("Your Chinese Zodiac is Snake"); 
-}
-else if (year === 6){
-    console.log("Your Chinese Zodiac is Horse"); 
-}
-else if (year === 7){
-    console.log("Your Chinese Zodiac is Goat"); 
-}
-else if (year === 8){
-    console.log("Your Chinese Zodiac is Monkey"); 
-}
-else if (year === 9){
-    console.log("Your Chinese Zodiac is Rooster");
-}
-else if (year === 10){
-    console.log("Your Chinese Zodiac is Dog");
-}
-else if(year === 11){
-    console.log("Your Chinese Zodiac is Pig");
-}
+
+withdrawMoney();
+withdrawMoney();
